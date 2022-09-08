@@ -62,6 +62,22 @@ services:
       - HANKO_ELEMENT_URL=http://localhost:9500/element.hanko-auth.js
     networks:
       - intranet
+  example2-frontend:
+    build: ../../example2/frontend
+    volumes:
+      - ../../example2/frontend/:/usr/src/app/
+    ports:
+      - "8070:8080"
+    networks:
+      - intranet
+  example2-backend:
+    build: ../../example2/backend
+    volumes:
+      - ../../example2/backend/:/usr/src/app/
+    ports:
+      - "8071:8080"
+    networks:
+      - intranet
   mailslurper:
     image: marcopas/docker-mailslurper:latest
     ports:

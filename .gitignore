@@ -28,4 +28,6 @@ e2e/playwright-report/
 e2e/playwright/.cache/
 frontend-sdk/dist/
 frontend-sdk/node_modules/
-
+example2/frontend/node_modules
+example2/backend/node_modules
+example2/backend/build
