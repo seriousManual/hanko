@@ -1,12 +1,14 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { Router, Route } from 'svelte-navigator'
 
-  onMount(async () => {
-    // await import("http://localhost:9500/element.hanko-auth.js")
-    await import("@teamhanko/hanko-elements/hanko-auth")
-  })
+  import Authorized from './Authorized.svelte'
+  import Login from './Login.svelte'
 </script>
 
-<div>
-  <hanko-auth api="http://localhost:8000" lang="de"></hanko-auth>
-</div>
+<Router>
+	<div>
+		<Route path="/" component={Login} />
+
+		<Route path="/authorized" component={Authorized} />
+	</div>
+</Router>
